@@ -1,0 +1,11 @@
+data.shape
+
+data.isnull().sum()
+
+data.dtypes
+
+data1 = data.dropna(subset=['CustomerID', 'Description'])
+data1 = data1[~data1['InvoiceNo'].astype(str).str.startswith('C')]
+data1 = data1[(data1['Quantity'] > 0) & (data1['UnitPrice'] > 0)]
+
+
